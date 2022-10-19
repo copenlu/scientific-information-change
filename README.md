@@ -61,5 +61,5 @@ The similarity estimator takes the following arguments:
 :param cache_folder: Path to store models
 ```
 
-If you create the estimator with no arguments, it will default to the best trained model from our EMNLP 2022 paper (`copenlu/spiced' in Huggingface). This is an SBERT model pretrained on a large corpus of >1B sentence pairs and further fine-tuned on SPICED. The model will be run on the best available device (GPU if available)
+If you create the estimator with no arguments, it will default to the best trained model from our EMNLP 2022 paper (`copenlu/spiced` in Huggingface). This is an SBERT model pretrained on a large corpus of >1B sentence pairs and further fine-tuned on SPICED. The model will be run on the best available device (GPU if available)
 
