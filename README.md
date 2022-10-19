@@ -52,6 +52,8 @@ Create the estimator as follows:
 estimator = SimilarityEstimator()
 ```
 
+**Note: During your first usage, the package will download a model file automatically, which is about 500MB.**
+
 The similarity estimator takes the following arguments:
 
 ```
