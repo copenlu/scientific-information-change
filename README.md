@@ -63,3 +63,39 @@ The similarity estimator takes the following arguments:
 
 If you create the estimator with no arguments, it will default to the best trained model from our EMNLP 2022 paper (`copenlu/spiced` in Huggingface). This is an SBERT model pretrained on a large corpus of >1B sentence pairs and further fine-tuned on SPICED. The model will be run on the best available device (GPU if available)
 
+The estimator has two methods for measuring the IMS between sentences. `estimate_ims` takes a list of sentences $a$ of length $N$ and a list of sentences $b$ of length $M$ and returns a numpy array $S$ of size $N \times M$, where $S_{ij}$ is the IMS between $a_{i}$ and $b_{j}$. For example:
+
+```
+estimator.estimate_ims(
+      a = [
+            'Higher-income professionals had less tolerance for smartphone use in business meetings.',
+            'Papers with shorter titles get more citations #science #metascience #sciencemetrics'
+      ],
+      b = [
+           'We are intrigued by the result that professionals with higher incomes are less accepting of mobile phone use in meetings.',
+           'Allowing users to retract recently posted comments may help minimize regret.',
+           'Our analysis suggests that papers with shorter titles do receive greater numbers of citations.'
+      ]
+   )
+
+>>> returns: array([[4.370547 , 1.042849 , 1.       ],
+                    [1.1089203, 1.       , 4.596382 ]], dtype=float32)
+```
+
+`estimate_ims_array` takes two lists of sentences of the same length $N$, and returns a list of length $N$ measuring the IMS between corresponding sentences in each list:
+
+```
+estimator.estimate_ims_array(
+      a = [
+            'Higher-income professionals had less tolerance for smartphone use in business meetings.',
+            'Papers with shorter titles get more citations #science #metascience #sciencemetrics'
+      ],
+      b = [
+           'We are intrigued by the result that professionals with higher incomes are less accepting of mobile phone use in meetings.',
+           'Our analysis suggests that papers with shorter titles do receive greater numbers of citations.'
+      ]
+   )
+
+>>> returns: [4.370546817779541, 4.596382141113281]
+```
+
