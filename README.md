@@ -10,7 +10,7 @@ Please use the following bibtex when referencing this work:
 ```
 @article{modeling-information-change,
       title={{Modeling Information Change in Science Communication with Semantically Matched Paraphrases}},
-      author={Wright, Dustin and Jiaxin, Pei and Jurgens, David and Augenstein, Isabelle},
+      author={Wright, Dustin and Pei, Jiaxin and Jurgens, David and Augenstein, Isabelle},
       year={2022},
       booktitle = {Proceedings of EMNLP},
       publisher = {Association for Computational Linguistics},
